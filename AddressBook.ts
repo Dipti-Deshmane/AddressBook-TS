@@ -1,9 +1,19 @@
-class Contact{
-    private firstName : string;
-    private lastName : string;
-    private address :string;
-    private city : string;
-    private zip : number;
-    private contact :number;
-    private email : string | number;
-}
+import Contact from "./Contact";
+
+class AddressBook{
+
+    private contacts:Contact[]=[];
+
+    addContact(contact:Contact):void{
+        this.contacts.push(contact);
+    };
+
+    listContacts():void{
+        this.contacts.forEach((contact)=>{
+            console.log(contact.getDetails());
+        });
+    };
+
+};
+
+export default AddressBook;
